@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EEE Viva Board — B.Sc. EEE Exam Preparation | 760+ Questions</title>
+  <meta name="description" content="Complete B.Sc. EEE exam preparation platform with 760+ questions covering Op-Amp, 555 Timer, BJT, MOSFET, FET, Filters, and all EEE subjects with detailed answers, diagrams, and interactive quizzes." />
+  <meta name="keywords" content="EEE, Viva, Quiz, Op-Amp, 555 Timer, BJT, MOSFET, FET, Electrical Engineering, Electronics, B.Sc., Exam Preparation" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- ═══════════ TOP NAVIGATION ═══════════ -->
+  <nav class="top-nav" id="topNav">
+    <div class="container top-nav__inner">
+      <a href="#" class="top-nav__logo" onclick="switchTab('home')">
+        <span class="top-nav__logo-icon">⚡</span>
+        <span class="top-nav__logo-text">EEE <span class="gradient-text">Viva Board</span></span>
+      </a>
+      <div class="top-nav__tabs" id="navTabs">
+        <button class="nav-tab nav-tab--active" data-tab="home" onclick="switchTab('home')">
+          <span class="nav-tab__icon">🏠</span><span class="nav-tab__text">Home</span>
+        </button>
+        <button class="nav-tab" data-tab="intro" onclick="switchTab('intro')">
+          <span class="nav-tab__icon">📋</span><span class="nav-tab__text">Introduction</span>
+        </button>
+        <button class="nav-tab" data-tab="basic" onclick="switchTab('basic')">
+          <span class="nav-tab__icon">📚</span><span class="nav-tab__text">Basic Viva</span>
+        </button>
+        <button class="nav-tab" data-tab="filter" onclick="switchTab('filter')">
+          <span class="nav-tab__icon">🔌</span><span class="nav-tab__text">Filters</span>
+        </button>
+        <button class="nav-tab" data-tab="subjects" onclick="switchTab('subjects')">
+          <span class="nav-tab__icon">🎓</span><span class="nav-tab__text">Subjects</span>
+        </button>
+      </div>
+      <button class="top-nav__hamburger" id="hamburger" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav()"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__item mobile-nav__item--active" data-tab="home" onclick="switchTab('home');toggleMobileNav()">
+      <span>🏠</span> Home
+    </button>
+    <button class="mobile-nav__item" data-tab="intro" onclick="switchTab('intro');toggleMobileNav()">
+      <span>📋</span> Introduction
+    </button>
+    <button class="mobile-nav__item" data-tab="basic" onclick="switchTab('basic');toggleMobileNav()">
+      <span>📚</span> Basic Viva
+    </button>
+    <button class="mobile-nav__item" data-tab="filter" onclick="switchTab('filter');toggleMobileNav()">
+      <span>🔌</span> Filters
+    </button>
+    <button class="mobile-nav__item" data-tab="subjects" onclick="switchTab('subjects');toggleMobileNav()">
+      <span>🎓</span> Subjects
+    </button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION: HOME
+       ═══════════════════════════════════════════════ -->
+  <section class="tab-content tab-content--active" id="tab-home">
+    <header class="hero">
+      <div class="hero__glow"></div>
+      <div class="container hero__inner">
+        <span class="hero__badge">B.Sc. EEE • Viva & Quiz Preparation</span>
+        <h1 class="hero__title">EEE <span class="gradient-text">Viva Board</span></h1>
+        <p class="hero__sub">Your complete exam preparation platform — 760+ questions covering electronic components, filters, and all B.Sc. EEE subjects with detailed answers, interactive SVG diagrams, and timed quizzes.</p>
+        <div class="hero__stats">
+          <div class="stat-card">
+            <span class="stat-card__num">760+</span>
+            <span class="stat-card__label">Questions</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__num">210</span>
+            <span class="stat-card__label">Quiz MCQs</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__num">550</span>
+            <span class="stat-card__label">Viva Q&A</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__num">15</span>
+            <span class="stat-card__label">Subjects</span>
+          </div>
+        </div>
+
+        <!-- Section cards -->
+        <div class="home-sections">
+          <div class="home-card" onclick="switchTab('intro')">
+            <div class="home-card__icon">📋</div>
+            <h3 class="home-card__title">Introduction</h3>
+            <p class="home-card__desc">Learn Op-Amp, 555 Timer, BJT, MOSFET & FET — pin diagrams, working principles + 30 quiz questions</p>
+            <span class="home-card__count">30 Quiz MCQs</span>
+          </div>
+          <div class="home-card" onclick="switchTab('basic')">
+            <div class="home-card__icon">📚</div>
+            <h3 class="home-card__title">Basic EEE Viva</h3>
+            <p class="home-card__desc">300 essential viva questions with answers for EEE students + 100 quiz questions</p>
+            <span class="home-card__count">300 Q&A + 100 MCQs</span>
+          </div>
+          <div class="home-card" onclick="switchTab('filter')">
+            <div class="home-card__icon">🔌</div>
+            <h3 class="home-card__title">Filters</h3>
+            <p class="home-card__desc">Active, passive, HPF, LPF, notch filters — 50 Q&A with circuit diagrams + 20 quiz questions</p>
+            <span class="home-card__count">50 Q&A + 20 MCQs</span>
+          </div>
+          <div class="home-card" onclick="switchTab('subjects')">
+            <div class="home-card__icon">🎓</div>
+            <h3 class="home-card__title">EEE Subjects</h3>
+            <p class="home-card__desc">200 Q&A from all 15 B.Sc. EEE subjects with diagrams + 60 quiz questions</p>
+            <span class="home-card__count">200 Q&A + 60 MCQs</span>
+          </div>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION: INTRODUCTION
+       ═══════════════════════════════════════════════ -->
+  <section class="tab-content" id="tab-intro">
+    <div class="section-hero">
+      <div class="container">
+        <span class="section-hero__badge">Fast Learn</span>
+        <h1 class="section-hero__title"><span class="gradient-text">Electronic Components</span></h1>
+        <p class="section-hero__sub">Learn about Op-Amp, 555 Timer, BJT, MOSFET & FET — pin diagrams, working principles, and characteristics</p>
+      </div>
+    </div>
+
+    <!-- Sub-tabs for intro -->
+    <div class="sub-tabs-wrap">
+      <div class="container">
+        <div class="sub-tabs" id="introSubTabs">
+          <button class="sub-tab sub-tab--active" onclick="switchIntroSub('learn')">📖 Learn</button>
+          <button class="sub-tab" onclick="switchIntroSub('quiz')">✏️ Quiz (30 MCQs)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEARN SUB-SECTION -->
+    <div class="intro-sub intro-sub--active" id="intro-learn">
+      <div class="container">
+        <!-- Component selector -->
+        <div class="component-tabs" id="componentTabs">
+          <button class="comp-tab comp-tab--active" onclick="switchComponent('opamp')" data-comp="opamp">
+            <span class="comp-tab__icon">⚡</span> Op-Amp
+          </button>
+          <button class="comp-tab" onclick="switchComponent('timer555')" data-comp="timer555">
+            <span class="comp-tab__icon">⏱️</span> 555 Timer
+          </button>
+          <button class="comp-tab" onclick="switchComponent('bjt')" data-comp="bjt">
+            <span class="comp-tab__icon">🔀</span> BJT
+          </button>
+          <button class="comp-tab" onclick="switchComponent('mosfet')" data-comp="mosfet">
+            <span class="comp-tab__icon">💠</span> MOSFET
+          </button>
+          <button class="comp-tab" onclick="switchComponent('fet')" data-comp="fet">
+            <span class="comp-tab__icon">🔶</span> FET
+          </button>
+        </div>
+
+        <!-- Component content areas -->
+        <div class="component-content component-content--active" id="comp-opamp"></div>
+        <div class="component-content" id="comp-timer555"></div>
+        <div class="component-content" id="comp-bjt"></div>
+        <div class="component-content" id="comp-mosfet"></div>
+        <div class="component-content" id="comp-fet"></div>
+      </div>
+    </div>
+
+    <!-- QUIZ SUB-SECTION -->
+    <div class="intro-sub" id="intro-quiz">
+      <div class="container">
+        <div class="quiz-header-bar">
+          <h2>Introduction Quiz — 30 Questions</h2>
+          <div class="quiz-header-bar__actions">
+            <button class="btn btn--sm btn--outline" onclick="revealAllQuiz('intro')">👁️ Show All Answers</button>
+            <button class="btn btn--sm btn--primary" onclick="resetQuiz('intro')">🔄 Reset</button>
+          </div>
+        </div>
+        <div class="progress-wrapper">
+          <div class="progress-bar"><div class="progress-bar__fill" id="progress-intro"></div></div>
+          <span class="progress-text" id="progress-text-intro">0 / 30 answered</span>
+        </div>
+        <div id="quiz-container-intro"></div>
+        <div class="results-panel" id="results-intro">
+          <div class="results-panel__inner">
+            <h2 class="results-panel__title">Quiz Complete! 🎉</h2>
+            <div class="results-panel__score-ring">
+              <svg viewBox="0 0 120 120" class="score-ring-svg">
+                <circle cx="60" cy="60" r="52" fill="none" stroke="#1e1e3a" stroke-width="10"/>
+                <circle cx="60" cy="60" r="52" fill="none" stroke="url(#scoreGrad1)" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" id="scoreArc-intro" transform="rotate(-90 60 60)"/>
+                <defs><linearGradient id="scoreGrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6c63ff"/><stop offset="100%" stop-color="#f06595"/></linearGradient></defs>
+              </svg>
+              <span class="score-ring-text" id="scoreText-intro">0%</span>
+            </div>
+            <p class="results-panel__detail" id="resultsDetail-intro"></p>
+            <button class="btn btn--primary" onclick="resetQuiz('intro')">🔄 Retake Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION: BASIC VIVA
+       ═══════════════════════════════════════════════ -->
+  <section class="tab-content" id="tab-basic">
+    <div class="section-hero">
+      <div class="container">
+        <span class="section-hero__badge">300 Questions & Answers + 100 MCQs</span>
+        <h1 class="section-hero__title"><span class="gradient-text">Basic EEE Viva</span></h1>
+        <p class="section-hero__sub">Essential viva questions every B.Sc. EEE student must know — with detailed answers, diagrams, and flowcharts</p>
+      </div>
+    </div>
+
+    <div class="sub-tabs-wrap">
+      <div class="container">
+        <div class="sub-tabs" id="basicSubTabs">
+          <button class="sub-tab sub-tab--active" onclick="switchBasicSub('viva')">📖 Viva Q&A (300)</button>
+          <button class="sub-tab" onclick="switchBasicSub('quiz')">✏️ Quiz (100 MCQs)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIVA SUB-SECTION -->
+    <div class="basic-sub basic-sub--active" id="basic-viva">
+      <div class="container">
+        <div class="viva-controls">
+          <div class="search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="search-basic" placeholder="Search questions..." oninput="filterViva('basic')"/>
+          </div>
+          <button class="btn btn--sm btn--outline" onclick="toggleAllViva('basic')">📖 Show/Hide All Answers</button>
+        </div>
+        <div class="viva-topic-filter" id="viva-topics-basic"></div>
+        <div id="viva-container-basic"></div>
+      </div>
+    </div>
+
+    <!-- QUIZ SUB-SECTION -->
+    <div class="basic-sub" id="basic-quiz">
+      <div class="container">
+        <div class="quiz-header-bar">
+          <h2>Basic EEE Quiz — 100 Questions</h2>
+          <div class="quiz-header-bar__actions">
+            <button class="btn btn--sm btn--outline" onclick="revealAllQuiz('basic')">👁️ Show All Answers</button>
+            <button class="btn btn--sm btn--primary" onclick="resetQuiz('basic')">🔄 Reset</button>
+          </div>
+        </div>
+        <div class="progress-wrapper">
+          <div class="progress-bar"><div class="progress-bar__fill" id="progress-basic"></div></div>
+          <span class="progress-text" id="progress-text-basic">0 / 100 answered</span>
+        </div>
+        <div id="quiz-container-basic"></div>
+        <div class="results-panel" id="results-basic">
+          <div class="results-panel__inner">
+            <h2 class="results-panel__title">Quiz Complete! 🎉</h2>
+            <div class="results-panel__score-ring">
+              <svg viewBox="0 0 120 120" class="score-ring-svg">
+                <circle cx="60" cy="60" r="52" fill="none" stroke="#1e1e3a" stroke-width="10"/>
+                <circle cx="60" cy="60" r="52" fill="none" stroke="url(#scoreGrad2)" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" id="scoreArc-basic" transform="rotate(-90 60 60)"/>
+                <defs><linearGradient id="scoreGrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6c63ff"/><stop offset="100%" stop-color="#20c997"/></linearGradient></defs>
+              </svg>
+              <span class="score-ring-text" id="scoreText-basic">0%</span>
+            </div>
+            <p class="results-panel__detail" id="resultsDetail-basic"></p>
+            <button class="btn btn--primary" onclick="resetQuiz('basic')">🔄 Retake Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION: FILTERS
+       ═══════════════════════════════════════════════ -->
+  <section class="tab-content" id="tab-filter">
+    <div class="section-hero">
+      <div class="container">
+        <span class="section-hero__badge">50 Questions & Answers + 20 MCQs</span>
+        <h1 class="section-hero__title"><span class="gradient-text">Filters</span></h1>
+        <p class="section-hero__sub">Active filters, passive filters, HPF, LPF, notch filter — with circuit diagrams, transfer functions, and Bode plots</p>
+      </div>
+    </div>
+
+    <div class="sub-tabs-wrap">
+      <div class="container">
+        <div class="sub-tabs" id="filterSubTabs">
+          <button class="sub-tab sub-tab--active" onclick="switchFilterSub('viva')">📖 Q&A (50)</button>
+          <button class="sub-tab" onclick="switchFilterSub('quiz')">✏️ Quiz (20 MCQs)</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-sub filter-sub--active" id="filter-viva">
+      <div class="container">
+        <div class="viva-controls">
+          <div class="search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="search-filter" placeholder="Search filter questions..." oninput="filterViva('filter')"/>
+          </div>
+          <button class="btn btn--sm btn--outline" onclick="toggleAllViva('filter')">📖 Show/Hide All Answers</button>
+        </div>
+        <div class="viva-topic-filter" id="viva-topics-filter"></div>
+        <div id="viva-container-filter"></div>
+      </div>
+    </div>
+
+    <div class="filter-sub" id="filter-quiz">
+      <div class="container">
+        <div class="quiz-header-bar">
+          <h2>Filter Quiz — 20 Questions</h2>
+          <div class="quiz-header-bar__actions">
+            <button class="btn btn--sm btn--outline" onclick="revealAllQuiz('filter')">👁️ Show All Answers</button>
+            <button class="btn btn--sm btn--primary" onclick="resetQuiz('filter')">🔄 Reset</button>
+          </div>
+        </div>
+        <div class="progress-wrapper">
+          <div class="progress-bar"><div class="progress-bar__fill" id="progress-filter"></div></div>
+          <span class="progress-text" id="progress-text-filter">0 / 20 answered</span>
+        </div>
+        <div id="quiz-container-filter"></div>
+        <div class="results-panel" id="results-filter">
+          <div class="results-panel__inner">
+            <h2 class="results-panel__title">Quiz Complete! 🎉</h2>
+            <div class="results-panel__score-ring">
+              <svg viewBox="0 0 120 120" class="score-ring-svg">
+                <circle cx="60" cy="60" r="52" fill="none" stroke="#1e1e3a" stroke-width="10"/>
+                <circle cx="60" cy="60" r="52" fill="none" stroke="url(#scoreGrad3)" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" id="scoreArc-filter" transform="rotate(-90 60 60)"/>
+                <defs><linearGradient id="scoreGrad3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f06595"/><stop offset="100%" stop-color="#ffd43b"/></linearGradient></defs>
+              </svg>
+              <span class="score-ring-text" id="scoreText-filter">0%</span>
+            </div>
+            <p class="results-panel__detail" id="resultsDetail-filter"></p>
+            <button class="btn btn--primary" onclick="resetQuiz('filter')">🔄 Retake Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION: SUBJECTS
+       ═══════════════════════════════════════════════ -->
+  <section class="tab-content" id="tab-subjects">
+    <div class="section-hero">
+      <div class="container">
+        <span class="section-hero__badge">200 Questions & Answers + 60 MCQs</span>
+        <h1 class="section-hero__title"><span class="gradient-text">EEE Subjects</span></h1>
+        <p class="section-hero__sub">Comprehensive Q&A from all 15 B.Sc. EEE subjects — Circuits, Machines, Power Systems, Electronics, Control Systems, and more</p>
+      </div>
+    </div>
+
+    <div class="sub-tabs-wrap">
+      <div class="container">
+        <div class="sub-tabs" id="subjectsSubTabs">
+          <button class="sub-tab sub-tab--active" onclick="switchSubjectsSub('viva')">📖 Q&A (200)</button>
+          <button class="sub-tab" onclick="switchSubjectsSub('quiz')">✏️ Quiz (60 MCQs)</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="subjects-sub subjects-sub--active" id="subjects-viva">
+      <div class="container">
+        <div class="viva-controls">
+          <div class="search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="search-subjects" placeholder="Search subject questions..." oninput="filterViva('subjects')"/>
+          </div>
+          <button class="btn btn--sm btn--outline" onclick="toggleAllViva('subjects')">📖 Show/Hide All Answers</button>
+        </div>
+        <div class="viva-topic-filter" id="viva-topics-subjects"></div>
+        <div id="viva-container-subjects"></div>
+      </div>
+    </div>
+
+    <div class="subjects-sub" id="subjects-quiz">
+      <div class="container">
+        <div class="quiz-header-bar">
+          <h2>Subjects Quiz — 60 Questions</h2>
+          <div class="quiz-header-bar__actions">
+            <button class="btn btn--sm btn--outline" onclick="revealAllQuiz('subjects')">👁️ Show All Answers</button>
+            <button class="btn btn--sm btn--primary" onclick="resetQuiz('subjects')">🔄 Reset</button>
+          </div>
+        </div>
+        <div class="progress-wrapper">
+          <div class="progress-bar"><div class="progress-bar__fill" id="progress-subjects"></div></div>
+          <span class="progress-text" id="progress-text-subjects">0 / 60 answered</span>
+        </div>
+        <div id="quiz-container-subjects"></div>
+        <div class="results-panel" id="results-subjects">
+          <div class="results-panel__inner">
+            <h2 class="results-panel__title">Quiz Complete! 🎉</h2>
+            <div class="results-panel__score-ring">
+              <svg viewBox="0 0 120 120" class="score-ring-svg">
+                <circle cx="60" cy="60" r="52" fill="none" stroke="#1e1e3a" stroke-width="10"/>
+                <circle cx="60" cy="60" r="52" fill="none" stroke="url(#scoreGrad4)" stroke-width="10" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7" id="scoreArc-subjects" transform="rotate(-90 60 60)"/>
+                <defs><linearGradient id="scoreGrad4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#20c997"/><stop offset="100%" stop-color="#339af0"/></linearGradient></defs>
+              </svg>
+              <span class="score-ring-text" id="scoreText-subjects">0%</span>
+            </div>
+            <p class="results-panel__detail" id="resultsDetail-subjects"></p>
+            <button class="btn btn--primary" onclick="resetQuiz('subjects')">🔄 Retake Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer" id="mainFooter">
+    <div class="container footer__inner">
+      <p>© 2026 EEE Viva Board — B.Sc. EEE Exam Preparation Platform</p>
+      <p class="footer__sub">760+ Questions • Op-Amp • 555 Timer • BJT • MOSFET • FET • Filters • All EEE Subjects</p>
+      <p class="footer__sub">Best of luck! 💕</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="data/intro-questions.js"></script>
+  <script src="data/basic-viva.js"></script>
+  <script src="data/basic-quiz.js"></script>
+  <script src="data/filter-viva.js"></script>
+  <script src="data/filter-quiz.js"></script>
+  <script src="data/subjects-viva.js"></script>
+  <script src="data/subjects-quiz.js"></script>
+  <script src="diagrams.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
